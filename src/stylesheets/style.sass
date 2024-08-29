@@ -1,0 +1,1373 @@
+@use 'baseColor'
+@use 'typography'
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;700&family=Mulish:wght@500;1000&display=swap')
+
+/* gobal variable */
+:root
+    --primary-font-color: #{baseColor.$cbd_cream}
+    --secondary-font-color: #{baseColor.$fine_yellow}
+    --odd-background-color: #{baseColor.$custom_black}
+    --even-background-color: #{baseColor.$gray_90}
+    --navbar-background-color: #{baseColor.$black}
+    --normal-text-font-color: #{baseColor.$white}
+    --heading-font-color: #{baseColor.$gray_60}
+    --btn-click-background-color: #{baseColor.$gray_60}
+
+.dark-mode
+    --primary-font-color: #{baseColor.$business_blue}
+    --secondary-font-color: #{baseColor.$ocd_blue}
+    --odd-background-color: #{baseColor.$custom_white}
+    --even-background-color: #{baseColor.$white}
+    --navbar-background-color: #{baseColor.$white}
+    --normal-text-font-color: #{baseColor.$gray_90}
+    --heading-font-color: #{baseColor.$gray_70}
+    --btn-click-background-color: #{baseColor.$gray_70}
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+html
+    scroll-behavior: smooth
+
+/* navber styling */
+nav
+    position: fixed
+    display: flex
+    justify-content: space-between
+    z-index: 2
+    padding-block: 1em
+    width: 100%
+.navbar-hide
+    opacity: 0
+    top: -100px
+    transition: all 500ms ease
+.navbar-show
+    opacity: 1
+    top: 0
+    left: 0
+    transition: all 500ms ease
+.navbar-color
+    background-color: var(--navbar-background-color)
+
+nav
+    .logo-icon
+        width: 7.5em
+        height: 6.5em
+        padding: 1em
+        display: flex
+        justify-content: center
+        align-items: center
+        position: relative
+        cursor: pointer
+
+        .company-logo
+            transform: scale(0.75)
+
+    .toggle-btn
+        display: inline-block
+        margin-block: auto
+        height: 1.5em
+        width: 4em
+        position: relative
+        cursor: pointer
+        input[type="checkbox"]
+            opacity: 0
+            height: 0
+            width: 0
+        .slider
+            position: absolute
+            display: inline-flex
+            justify-content: space-between
+            padding: 0.375em
+            height: 2em
+            width: 4.25em
+            top: 0
+            left: 0
+            border: 2px solid var(--primary-font-color)
+            border-radius: 0.25em
+            &::before
+                content: " "
+                display: inline-block
+                height: 1.75em
+                width: 1.75em
+                padding: 1px
+                z-index: -1
+                background-color: var(--normal-text-font-color)
+                position: absolute
+                top: 0em
+                left: 0em
+                border-radius: 0.125em
+                transition: transform 250ms ease-out
+        #colorSwitch:checked
+            + .slider
+                &::before
+                    transform: translateX(calc( 4em - 1.75em))
+                    transition: transform 250ms ease-out
+
+nav
+    .menu-icon
+        width: 7.5em
+        height: 6.5em
+        padding: 1em
+        display: flex
+        z-index: 2
+        justify-content: center
+        align-items: center
+        position: relative
+        cursor: pointer
+        #menu_svg
+            transform: scale(0.5)
+
+    #close_icon
+        display: none
+        transform: scale(0.5)
+
+    .menu-wrapper
+        position: fixed
+        top: 0%
+        left: 0%
+        height: 100%
+        width: 100%
+        clip-path: polygon(95% 10%, 95% 10%, 92% 10%, 92% 10%)
+        transition: all 250ms ease-in-out
+        background-color: var(--navbar-background-color)
+
+        .menu
+            li
+                list-style: none
+                // margin: 2em 0 2em 0      // this is for 4 links 
+                margin-block: 1em // this is for 5 links
+                border-bottom: 2px solid var(--primary-font-color)
+                a
+                    text-decoration: none
+                    // font-family: var(--primary-font-1000)
+                    font-family: typography.$primary-font
+                    font-weight: 1000
+                    cursor: pointer
+                    color: var(--primary-font-color)
+                    margin-left: 0.5em
+                    // font-size: 6.5em     // this is for 4 links 
+                    font-size: 6.0em // this is for 5 links
+                    span
+                        font-size: 0.5em
+                        color: var(--heading-font-color)
+
+#active:checked
+    ~ .menu-wrapper
+        clip-path: polygon(0% 0%,100% 0%,100% 100%,0% 100%)
+    ~ .menu-icon
+        #menu_svg
+            display: none
+        #close_icon
+            display: inline-block
+
+#active
+    display: none
+
+/* cursor following div */
+.cursor
+    position: fixed
+    z-index: 3
+    width: 10px
+    height: 10px
+    background-color: var(--normal-text-font-color)
+    transition: 100ms
+    transform: translate(-50%, -50%)
+    pointer-events: none
+
+/* landing section text styling */
+.landing
+    display: flex
+    flex-wrap: wrap
+    overflow: hidden
+    height: 100vh
+    background-color: var(--odd-background-color)
+.landing-left
+    width: 50%
+    padding-left: 6em
+.text
+    color: var(--primary-font-color)
+    font-family: typography.$secondary-font
+    font-weight: 700
+    font-size: 3em
+    letter-spacing: -3.5px
+    line-height: 55px
+    margin-top: 15%
+.h-text
+    font-size: 4.5em
+    color: var(--primary-font-color)
+    position: absolute
+    top: 17%
+.hello
+    color: var(--secondary-font-color)
+
+.hatchtag
+    display: block
+    height: 100%
+    margin-top: 0.25em
+    // overflow: hidden
+    font-family: typography.$primary-font
+    font-weight: 1000
+    letter-spacing: -0.01em
+    .atc
+        letter-spacing: 0.01em
+    .tag-text
+        font-weight: 500
+        .a
+            letter-spacing: -0.04em
+
+.sub-text
+    width: 9em
+    position: absolute
+    top: calc( 65% + 2em )
+    left: auto
+    color: baseColor.$gray_70
+    font-family: typography.$primary-font
+    font-weight: 700
+    font-size: 2em
+    letter-spacing: -1.75px
+    .strategic
+        display: inline-block
+        font-weight: 1000
+        font-size: 1.5em
+        transform: translateX(-1px)
+
+.landing-right
+    width: 50%
+    display: flex
+    justify-content: center
+    align-items: center
+    .animation-box
+        transform-style: preserve-3d
+        transform: rotateY(-25deg)
+        animation: rotate-text 100s linear infinite
+        .right_text
+            margin: 0
+            height: 1.3em
+            width: 30vw
+            padding: 0 0.3em
+            position: absolute
+            font-family: typography.$primary-font
+            font-size: 5em
+            color: #777
+            font-weight: 1000
+            background-color: var(--odd-background-color)
+            white-space: nowrap
+            transition: all .3s ease
+            transform-style: preserve-3d
+
+@keyframes rotate-text
+    0%
+        transform: perspective(800px) rotateX(0deg) rotate(-10deg)
+    100%
+        transform: perspective(800px) rotateX(360deg) rotate(-10deg)
+
+/* section default styling */
+.section-container
+    padding-block: 6em
+.center-heading
+    font-family: typography.$secondary-font
+    color: var(--heading-font-color)
+    font-weight: 700
+    font-size: 4.5em
+    letter-spacing: -3.5px
+    width: 100%
+    display: flex
+    justify-content: center
+
+/* project section styling */
+.projects
+    background-color: var(--even-background-color)
+    overflow: hidden
+/* marquee styling */
+.marquee
+    width: max-content
+    display: flex
+    margin-top: 6em
+    animation: marquee-animation var(--animation-speed, 60s) linear infinite var(--animation-direction, forwards)
+    &[data-reversed="true"]
+        --animation-direction: reverse
+        --animation-speed: 90s
+.marquee_img
+    width: auto
+    margin-inline: 3em
+    height: 9rem
+
+@keyframes marquee-animation
+    to
+        transform: translate(-50%)        
+
+/* lead person section styling */
+.team-leaders
+    background-color: var(--odd-background-color)
+.person
+    margin-top: 6em
+    padding-inline: 6em
+    display: flex
+    gap: 8rem
+    row-gap: 4em
+    justify-content: center
+    flex-wrap: wrap
+.container
+    width: 40%
+    height: 23em
+    color: var(--normal-text-font-color)
+    .container-heading
+        font-family: typography.$secondary-font
+        font-weight: 700
+        font-size: 2.25em
+        letter-spacing: -1.312px
+        display: flex
+        justify-content: center
+        .designation
+            font-weight: 300
+    .main-container
+        display: flex
+        width: fit-content
+        justify-content: space-around
+        align-items: flex-start
+        position: relative
+        margin-top: 2em
+        font-family: typography.$primary-font
+        font-weight: 500
+        font-size: 1.125em
+        .container-details
+            width: 7.5vw
+            height: 15vh
+            background-color: baseColor.$cbd_cream
+            opacity: 0.6
+            z-index: -1
+            position: absolute
+            top: -1em
+            left: 5.5em
+            display: flex
+            justify-content: center
+            align-items: center
+        .user-img
+            height: 11em
+            outline: 2px solid var(--normal-text-font-color)
+        p
+            width: 60%
+            
+
+
+/* expertise section styling */
+.expertise
+    background-color: var(--odd-background-color)
+    .main-container
+        padding-inline: 6em
+        font-family: typography.$primary-font
+        font-weight: 1000
+
+.expertise-main-container
+    display: flex
+    justify-content: space-around
+    align-items: flex-end
+
+.expertise-subcontainer-text
+    width: 60%
+
+.extertise-subcontainer-illustration
+    width: 40%
+    position: relative
+    display: flex
+    justify-content: flex-end
+.flex-start
+    display: flex
+    justify-content: flex-start
+
+.text-marketing,
+.text-technology
+    margin-top: 2em
+    font-size: 4.2em
+    width: 20ch
+    color: var(--primary-font-color)
+
+.text-craft
+    margin-top: 2em
+    font-size: 4.2em
+    width: 20ch
+    color: var(--primary-font-color)
+    text-align: right
+
+.bottomline-hr
+    margin-top: 2em
+    width: 100%
+    height: 2px
+    background-color: var(--heading-font-color)
+
+.bottomline-technology
+    margin-top: 4px
+
+/* feature button of expertise section */
+.button-container
+    margin-top: 2em
+.btn-expertise-w
+    width: 20em
+.align-end
+    display: flex
+    flex-direction: column
+    align-items: flex-end
+
+/* modal CSS animation */
+@keyframes blowUpModal
+    0%
+        transform: scale(0)
+    100%
+        transform: scale(1)
+
+@keyframes blowDownModal
+    0%
+        transform: scale(1)
+    100%
+        transform: scale(0)
+
+.modal
+    display: none
+    position: fixed
+    z-index: 3
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    overflow: auto
+    // animation: blowUpModal 0.7s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards
+    animation: blowUpModal 0.7s ease-in-out forwards
+
+.modal-border-marketing
+    position: relative
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    gap: 1em
+    height: 98%
+    width: 98%
+    border: 2.5px solid baseColor.$impact_yellow
+    overflow: auto
+
+.modal-border-design
+    position: relative
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    gap: 1em
+    height: 98%
+    width: 98%
+    border: 2.5px solid baseColor.$orange_soda
+    overflow: auto
+
+.modal-border-technology
+    position: relative
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    gap: 1em
+    height: 98%
+    width: 98%
+    border: 2.5px solid baseColor.$ocd_blue
+    overflow: auto
+
+.modal-container
+    background-color: var(--odd-background-color)
+    width: 100%
+    height: 100%
+    z-index: 5
+    padding: 2em
+    box-sizing: border-box
+    overflow: auto
+    text-align: left
+
+.modal-content
+    padding: 0
+    margin-top: 3.4em
+    width: 80%
+    margin-inline: auto
+    border: 3px solid var(--heading-font-color)
+
+.heading-container
+    height: 11vh
+    background-color: baseColor.$cbd_cream
+    position: relative
+
+.content-heading
+    font-size: 3em
+    position: absolute
+    top: 35%
+    left: 5%
+    margin-top: 0
+
+.contentBlock
+    background-color: baseColor.$white
+    padding-block: 2em
+
+.content-description
+    padding: 0 0 0.125em 3em
+    width: 70%
+    font-weight: 500
+    font-size: 1.3em
+    
+
+.close
+    position: absolute
+    top: 0
+    left: calc( 100% - 1em )
+    color: var(--normal-text-font-color)
+    font-size: 3.5em
+    font-weight: 500
+    margin-top: 2px
+
+.close:hover,
+.close:focus
+    // color: baseColor.$white
+    text-decoration: none
+    cursor: pointer
+
+//read more button of modal
+.read-more
+    margin-top: 1em
+    margin-left: 4.2em
+.read-more-btn
+    font-family: typography.$primary-font
+    font-weight: 1000
+    font-size: 1.2em
+    color: baseColor.$business_blue
+    border: none
+    background-color: transparent
+
+@keyframes motion
+    0%, 100%
+        transform: translateX(0)
+
+    50%
+        transform: translateX(10%)
+
+.arrow-icon
+    overflow: hidden
+    animation: motion 2s linear infinite
+
+.read-more-btn:hover
+    cursor: pointer
+
+/* svgs animations CSS */
+
+/* --------------------------------------- */
+/* animations for marketing-illustration */
+.marketing-main-character
+    // height: 22em
+    width: 100%
+
+.heartbeat
+    position: absolute
+    top: 20%
+    left: 25%
+    transform: translate(-50%, -50%)
+    // height: 2.75em
+    // width: 2.75em
+    animation: heartBeat 1s ease-in-out infinite alternate-reverse
+
+.Likes
+    position: absolute
+    top: 50%
+    left: 100%
+    transform: translate(-50%, -50%)
+    // height: 2.75em
+    // width: 2.75em
+    animation: moveDownIcon 1s ease-in-out infinite alternate-reverse
+
+.search-icon
+    position: absolute
+    top: 50%
+    left: 0%
+    transform: translate(-50%, -50%)
+    // height: 2.75em
+    // width: 2.75em
+    animation: zoomOut 1s ease-in-out infinite alternate-reverse
+
+.location
+    position: absolute
+    top: 10%
+    left: 60%
+    transform: translate(-50%, -50%)
+    // height: 2.75em
+    // width: 2.75em
+    animation: moveDownIcon 1s ease-in-out infinite alternate-reverse
+
+@keyframes heartBeat
+    to
+        transform: scale(1)
+    from
+        transform: scale(1.1)
+
+@keyframes moveDownIcon
+    to
+        transform: translate(-50%, -50%)
+    from
+        transform: translate(-50%, calc( -50% - 0.5em ))
+
+@keyframes zoomOut
+    to
+        transform: scale(1)
+    from
+        transform: scale(0.9)
+
+/*animation for design-illustration*/
+.design-main-character
+    margin-top: 6em
+    // height: 26em
+    width: 100%
+
+.card
+    position: absolute
+    top: 35%
+    left: 70%
+    transform: translate(-50%, -50%)
+    // transform: translate(calc( -50% + 7.5ch ), -50%)
+    height: 30%
+    width: 18%
+    // animation: moveCard 3s linear infinite
+@keyframes moveCard
+    0%, 100%
+        transform: translate(-50%, -50%)
+    50%, 60%
+        transform: translate(calc( -50% + 70px ), -50%)
+
+
+.brush-icon
+    position: absolute
+    top: 30%
+    left: 15%
+    transform: translate(-50%, -50%)
+    scale: 1.5
+    animation: brush_asset 2s ease-in-out infinite alternate-reverse
+
+@keyframes brush_asset
+    to
+        transform: translate(-50%, -50%) rotate(0deg)
+    from
+        transform: translate(-50%, calc( -50% - 1em )) rotate(-10deg)
+
+.paint-pallet
+    position: absolute
+    top: 70%
+    left: 70%
+    transform: translate(-50%, -50%)
+    scale: 1.5
+    animation: paint_pallet 2s ease-in-out infinite alternate-reverse
+
+@keyframes paint_pallet
+    to
+        transform: translate(-50%, -50%) rotate(0deg)
+    from
+        transform: translate(calc(-50% + 1em), -50%) rotate(10deg)
+
+.pencil-icon
+    position: absolute
+    top: 60%
+    left: 0%
+    transform: translate(-50%, -50%)
+    scale: 1.5
+    animation: pencil_icon 2s ease-in-out infinite alternate-reverse
+
+@keyframes pencil_icon
+    to
+        transform: translate(-50%, -50%) rotate(0deg)
+    from
+        transform: translate(calc(-50% - 1em), -50%) rotate(-10deg)
+
+.square-icon
+    position: absolute
+    top: 35%
+    left: 5%
+    transform: translate(-50%, -50%)
+    scale: 1.5
+    animation: square_asset 2s ease-in-out infinite alternate-reverse
+
+@keyframes square_asset
+    to
+        transform: translate(-50%, -50%) translateX(0) rotate(0deg)
+    from
+        transform: translate(calc(-50% - 1em), calc(-50% - 1em)) rotate(-10deg)
+
+.crab-icon
+    position: absolute
+    top: 30%
+    left: 50%
+    transform: translate(-50%, -50%)
+    scale: 1.5
+    animation: crab_asset 2s ease-in-out infinite alternate-reverse
+
+@keyframes crab_asset
+    to
+        transform: translate(-50%, -50%) rotate(0deg)
+    from
+        transform: translate(-50%, calc(-50% - 1em)) rotate(-10deg)
+
+.comb
+    position: absolute
+    top: 80%
+    left: 35%
+    transform: translate(-50%, -50%)
+    scale: 0.5
+    animation: comb_asset 2s ease-in-out infinite alternate-reverse
+
+@keyframes comb_asset
+    to
+        transform: translate(-50%, -50%) rotate(0deg)
+    from
+        transform: translate(calc(-50% + 1em), calc( -50% + 1em )) rotate(10deg)
+
+/* animations for technology-illustration */
+.tech-main-character
+    margin-top: 6em
+    // height: 26em
+    width: 100%
+
+.line-purple
+    position: absolute
+    top: 20%
+    left: 10%
+    transform: translate(-50%, -50%)
+    animation: horizontal-line-motion 3s ease-in-out infinite
+
+.line-yellow
+    position: absolute
+    top: 55%
+    left: 92.5%
+    transform: translate(-50%, -50%)
+    animation: horizontal-line-motion 3s ease-in-out infinite
+
+@keyframes horizontal-line-motion
+    0%, 100%
+        transform: translate(-50%, -50%)
+
+    50%
+        transform: translate(calc( -50% + 1em ), -50%)
+
+.message-icon
+    position: absolute
+    top: 47%
+    left: 20%
+    transform: translate(-50%, -50%)
+    animation: flip 10s linear infinite
+
+@keyframes flip
+    from
+        transform: rotateY(0deg)
+
+    to
+        transform: rotateY(360deg)
+
+.pie-gray
+    position: absolute
+    top: 38%
+    left: 87%
+    transform: translate(-50%, -50%)
+    scale: 1.2
+    // animation: pieTriangleGray 5s ease-in-out infinite
+.pie-black
+    position: absolute
+    top: 35%
+    left: 82%
+    transform: translate(-50%, -50%)
+    scale: 1.2
+    // animation: pieTriangleBlack 5s ease-in-out infinite
+
+@keyframes pieTriangleBlack
+    0%,100%
+        transform: translate(-50%, -50%)
+
+    50%
+        transform: translate(-50%, calc( -50% - 0.5em ))
+
+@keyframes pieTriangleGray
+    0%,100%
+        transform: translate(-50%, -50%)
+
+    50%
+        transform: translate(calc( -50% + 0.5em ), calc( -50% - 0.5em ))
+
+.location_red
+    position: absolute
+    top: 56%
+    left: 2%
+    transform: translate(-50%, -50%)
+    scale: 0.2
+    animation: locationIcon 3s ease-in-out infinite
+
+@keyframes locationIcon
+    0%, 100%
+        transform: translate(-50%, -50%)
+
+    50%
+        transform: translate(-50% ,calc( -50% - 0.5em ))
+
+.globe
+    position: absolute
+    top: 25%
+    left: 33%
+    transform: translate(-50%, -50%)
+    aspect-ratio: 1
+    width: 5rem
+    scale: 1.2
+    border-radius: 50%
+    display: flex
+    overflow: hidden
+    border: 2px solid #8bc34a
+
+    .earthIcon
+        animation: rotation 30s linear infinite forwards
+        path
+            stroke: #8bc34a
+
+@keyframes rotation
+    to
+        transform: translate(0%)
+
+    from
+        transform: translate(-100%)
+
+/* your-scory section styling */
+.your-story
+    background-color: var(--even-background-color)
+    .main-content
+        margin-top: 6em
+        width: 100%
+        display: flex
+        justify-content: center
+        transform-style: preserve-3d
+    .form-section
+        display: flex
+        flex-direction: column
+        width: 60%
+        backface-visibility: hidden
+        background-color: var(--even-background-color)
+        border: 2px solid var(--even-background-color)
+        font-family: typography.$primary-font  
+    .submit-card
+        position: absolute
+        top: 6%
+        width: 60%
+        height: 90vh
+        background-color: var(--odd-background-color)
+        border: 2px solid var(--heading-font-color)
+        font-family: typography.$primary-font
+        font-weight: 1000
+        font-size: 3em
+        color: var(--heading-font-color)
+        display: flex
+        justify-content: center
+        align-items: center
+        backface-visibility: hidden
+        transform: rotateY( 180deg )
+.hide
+    opacity: 0
+.show
+    opacity: 1
+
+/* form default styling */
+.form-control-group
+    display: flex
+    width: 100%
+    flex-direction: column
+    margin-bottom: 0.5em
+.form-control
+    height: 3em
+    border: 2px solid var(--heading-font-color)
+    background-color: var(--even-background-color)
+    color: var(--heading-font-color)
+    font-weight: 1000
+    font-size: 1.5em
+    text-align: center
+.textarea
+    font-family: typography.$primary-font
+    height: 12em
+    padding: 1em
+    // text-align: center
+    resize: none
+    position: relative
+    &::placeholder
+        width: 30ch
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+select
+    appearance: none
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='21' height='18' viewBox='0 0 21 18' fill='none'%3e%3cpath d='M10.511 17.6895L20.4798 0.111328H0.54218L10.511 17.6895Z' fill='%23777777'/%3e%3c/svg%3e")
+    background-repeat: no-repeat
+    background-position: right 0.7rem top 50%
+    background-size: 0.65rem auto
+    option
+        background-color: var(--odd-background-color)
+        color: baseColor.$gray_70
+        font-weight: 1000
+        text-align: center
+.form-group
+    display: flex
+    justify-content: space-between
+    gap: 1.5em
+.error
+    border: 2px solid #f00
+.error-text
+    color: #f00
+    font-weight: 500
+input:focus, textarea:focus, select:focus
+    outline: 1px solid var(--primary-font-color)
+    border: 1px solid var(--primary-font-color)
+.btn
+    background-color: var(--even-background-color)
+    color: var(--normal-text-font-color)
+    border: 1px solid var(--normal-text-font-color)
+    outline: 1px solid var(--normal-text-font-color)
+    cursor: pointer
+    transition: all 300ms ease-in-out
+.btn:hover
+    border: 2px solid var(--normal-text-font-color)
+    color: var(--even-background-color)
+    background-color: var(--normal-text-font-color)
+    transition: all 300ms ease-in-out
+.btn:active
+    border: none
+    color: var(--even-background-color)
+    background-color: var(--btn-click-background-color)
+
+/* footer section styling */
+.thank-you
+    background-color: var(--even-background-color)
+    padding-bottom: 6em
+    display: flex
+    flex-direction: column
+    align-items: center
+    .last-text
+        color: var(--primary-font-color)
+        font-family: typography.$secondary-font
+        font-weight: 700
+        line-height: 75px
+        width: 11em
+        font-size: 4.5em
+        margin-top: 2em
+        letter-spacing: -3.5px
+        span
+            color: var(--secondary-font-color)
+    .center-div
+        // height: 12em
+        padding-block: 2em
+        width: 80%
+        margin-top: 1em
+        margin-bottom: 7.5em
+        border: 1px solid baseColor.$gray_70
+        display: flex
+        justify-content: center
+        align-items: center
+        .form-content
+            display: flex
+            justify-content: center
+            align-items: center
+            gap: 1em
+            .thank-you-form-control-group
+                margin-top: 1.6em
+            .form-control-w
+                width: 27em
+            .btn-w
+                width: 8em
+    .custom-hr
+        margin-top: 4em
+        width: 100%
+        height: 1px
+        background-color: baseColor.$gray_70
+    .talk-write,
+    .meet-connect
+        width: 60%
+        margin-block: 2.5em
+        display: flex
+        justify-content: space-between
+        align-items: flex-start
+        .label
+            width: 50%
+            display: flex
+            flex-direction: column
+            align-items: flex-start
+            font-family: typography.$primary-font
+            font-weight: 1000
+            font-size: 1.5em
+            color: var(--heading-font-color)
+            margin: 0.5em 0em
+            span
+                img
+                    width: 15%
+                a
+                    text-decoration: none
+                    color: var(--normal-text-font-color)
+                svg
+                    width: 15%
+                    height: auto
+                    rect
+                        stroke: var(--normal-text-font-color)
+                    path
+                        fill: var(--normal-text-font-color)
+                        transition: all 300ms ease-in-out
+                        &:first-child
+                            fill: var(--even-background-color)
+                            transition: all 300ms ease-in-out
+                a:hover
+                    svg
+                        path
+                            fill: var(--even-background-color)
+                            transition: all 300ms ease-in-out
+                            &:first-child
+                                fill: var(--normal-text-font-color)
+                                transition: all 300ms ease-in-out
+                a:active
+                    svg
+                        path:first-child
+                            fill: var(--btn-click-background-color)
+                        rect
+                            stroke: var(--btn-click-background-color)
+        .flex-end
+            align-items: flex-end
+            text-align: right
+    .custom-hr-6
+        width: 65%
+        height: 1px
+        background-color: baseColor.$gray_70
+
+/* copyright section styling */
+.copy-rights
+    color: var(--normal-text-font-color)
+    background-color: var(--even-background-color)
+    border-top: 1px solid baseColor.$gray_70
+    .copy-right-container
+        margin-inline: auto
+        width: 60%
+        font-family: typography.$primary-font
+        font-weight: 1000
+        display: flex
+        justify-content: space-between
+        p
+            padding-block: 2em
+            min-height: 1em
+            display: flex
+            align-items: center
+            .copy-right-text
+                margin-block-start: 0.25em
+                font-size: 1.3em
+            .h-copy-right-text
+                font-size: 1.3em
+            svg
+                position: relative
+                top: 15%
+                scale: 0.8
+                path
+                    fill: var(--normal-text-font-color)
+
+/* ----------------------- */
+/** style for tablet view **/
+/* ----------------------- */
+@media only screen and (max-width: 992px) 
+    /* cursor disabled */
+    .cursor
+        display: none
+
+    /* navbar section styling */
+    nav 
+        .menu-wrapper
+            padding-block-start: 4em
+            .menu 
+                li 
+                    a
+                        font-size: 4em
+    
+    /* landing section styling */
+    .landing
+        overflow: hidden
+    .landing-left
+        padding-left: 2em
+    .text 
+        position: absolute
+        bottom: calc( 100% - 65% - 1em)
+        margin-top: 0
+        .hello
+            opacity: 0
+    .h-text
+        top: auto
+        bottom: calc( 100% - 65% - 1em)
+    .landing-right
+        transform: translate(50%, -85%) scale(0.5)
+        .animation-box
+            .right_text
+                width: 100vw
+    .landing-left
+        z-index: 1
+        width: 100%
+    
+    /* all section default styling */
+    .center-heading
+        font-size: 3.5em
+        text-align: center
+    .section-container
+        padding-block: 2em
+
+    /* marquee section styling */
+    .marquee_img
+        height: 100px
+
+    /* expertise section styling */
+    .expertise
+        .main-container
+            padding-inline: 4em
+    .expertise-main-container
+        flex-direction: column-reverse
+        &:nth-child(2)
+            flex-direction: column
+    .expertise-subcontainer-text
+        width: 100%
+    .text-marketing,
+    .text-technology
+        font-size: 3em
+    .text-craft
+        font-size: 3em
+        text-align: left
+    .align-end
+        align-items: normal
+    .btn-expertise-w
+        width: 100%
+    .extertise-subcontainer-illustration
+        width: 100%
+    .marketing-main-character,
+    .design-main-character,
+    .tech-main-character
+        width: 100%
+
+    /* marketing svg styling */
+    .heartbeat
+        top: 20%
+        left: 30%
+        scale: 0.8
+    .Likes
+        scale: 0.9
+
+    /* design svg styling */
+    @keyframes moveCard
+        0%, 100%
+            transform: translate(-50%, -50%)
+        50%, 60%
+            transform: translate(8%, -79%)
+    .pencil-icon
+        left: 10%
+    .square-icon
+        top: 40%
+        left: 10%
+    .comb
+        left: 50%
+    
+    /* technology svg styling */
+    .globe
+        width: 4em
+    .line-yellow
+        top: 56%
+
+    /* modal styling */
+    .modal-content
+        margin-top: auto
+    .content-heading
+        font-size: 2em
+    .content-description
+        font-size: 1em
+    .read-more-btn
+        font-size: 1em
+
+    /* your story section styling */
+    .your-story
+        .main-content
+            padding-inline: 1em
+        .submit-card
+            width: 100%
+        .form-section
+            width: 100%
+    .form-group
+        flex-direction: column
+        gap: 0
+
+    /* person section styling */
+    .person
+        padding-inline: 1em
+    .container
+        width: 100%
+        height: auto
+        .container-heading
+            font-size: 2em
+        .main-container p
+            width: 50%
+    
+    /* footer section styling */
+    .thank-you
+        width: 100%
+        padding-inline: 1em
+        .last-text
+            font-size: 3rem
+            line-height: 50.5px
+        .center-div
+            margin-top: 7.5em
+            width: 100%
+            flex-direction: column
+            .form-content
+                width: 90%
+                flex-direction: column
+                align-items: center
+                .form-control-w,
+                .btn-w
+                    width: 100%
+        .talk-write,
+        .meet-connect
+            width: 100%
+    
+    /* copyright section styling */
+    .copy-rights
+        width: 100%
+        padding-inline: 1em
+
+/* ----------------------- */
+/** style for mobile view **/
+/* ----------------------- */
+@media only screen and (max-width: 480px)
+    /* navbar section styling */
+    nav 
+        .menu-wrapper
+            .menu 
+                li 
+                    a
+                        font-size: 3em
+    .landing-right
+        transform: translate(17%, -85%) scale(0.5)
+
+    /* all section default styling */
+    .center-heading
+        font-size: 3em
+        text-align: center
+
+    /* expertise section styling */
+    .expertise
+        .main-container
+            padding-inline: 2em
+    .text-craft,
+    .text-marketing,
+    .text-technology
+        width: 15ch
+        font-size: 2.2em
+    /* marketing svg styling */
+    .heartbeat
+        top: 25%
+        left: 20%
+    .location
+        scale: 0.8
+    .Likes
+        scale: 0.7
+
+    /* designing svg styling */
+    @keyframes moveCard
+        0%, 100%
+            transform: translate(-50%, -50%)
+        50%, 60%
+            transform: translate(8%, -70%)
+    .card
+        top: 40%
+    .brush-icon,
+    .paint-pallet,
+    .pencil-icon,
+    .square-icon,
+    .crab-icon
+        scale: 1
+        
+    /* technology svg styling */
+    .globe
+        top: 35%
+        // left: 30%
+        // height: 4em
+        width: 3rem
+    .location_red
+        top: 45%
+        left: -10%
+        scale: 0.09
+    .pie-black
+        top: 40%
+        left: 79%
+        scale: 0.8
+    .pie-gray
+        top: 42%
+        left: 85%
+        scale: 0.8
+    .message-icon
+        top: 52%
+        left: 19%
+        scale: 0.8
+    .line-yellow
+        top: 59%
+        scale: 0.8
+    .line-purple
+        scale: 0.8
+        top: 25%
+        // left: 10%
+    
+    /* modal section styling */
+    .modal-content
+        width: 100%
+    .content-heading
+        position: static
+        padding-left: 0
+        padding-top: 1em
+        font-size: 1.5em
+    .contentBlock
+        height: auto
+        padding-block: 0
+    .content-description
+        width: 100%
+        padding-left: 1em
+    .read-more
+        margin-inline-start: 1em
+    .close
+        font-size: 2em
+
+    /* your story section */
+    .textarea
+        &::placeholder
+            width: 14ch
+
+    /* person section styling */
+    .container
+        .container-heading
+            font-size: 1.8em
+        .main-container
+            flex-direction: column
+            align-items: center
+            p
+                margin-block-start: 1em
+                width: 100%
+
+    /* footer section styling */
+    .thank-you
+        .last-text
+            width: 100%
+            font-size: 2.25rem
+            line-height: 50.5px
+        .talk-write,
+        .meet-connect
+            flex-direction: column
+            .label
+                width: 100%
+            .flex-end
+                align-items: flex-start
+                text-align: left
+    
+    /* copyright section styling */
+    .copy-rights
+        .copy-right-container
+            flex-direction: column
+            width: 100%
+            align-items: flex-start
+            p
+                padding-block: 0.5em

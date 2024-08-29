@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="language" content="English" />
+    <meta name="author" content="{{ site.author.name }}" />
+    <link type="text/plain" rel="author" href="./humans.txt" />
+    <meta
+      name="description"
+      content="{% if page.description %}{{ page.description }}{% else %}{{
+        site.description
+      }}{% endif %}"
+    />
+    <meta name="copyright" content="{{ site.author.name }}" />
+    {% if site.isLive %}
+    <meta name="revisit-after" content="1 day" />
+    <meta
+      name="keywords"
+      content="{% for keyword in site.author.keywords %}{{
+        keyword
+      }}, {% endfor %}{{ site.author.name }}"
+    />
+    {% if site.seo.google_verification %}
+    <meta
+      name="google-site-verification"
+      content="{{ site.seo.google_verification }}"
+    />
+    {% endif %}
+    <meta
+      itemprop="name"
+      content="
+        {% if page.title %}
+          {{ page.title }}
+        {% else %}
+          {{ site.title }} {{ title }}
+        {% endif %}"
+    />
+    <meta
+      itemprop="description"
+      content="
+        {% if page.description %}
+          {{ page.description }}
+        {% else %}
+          {{ site.description }}
+        {% endif %}"
+    />
+    <meta itemprop="image" content="{{ site.logo }}" />
+    <meta name="google" content="notranslate" />
+    <meta name="google" content="nositelinkssearchbox" />
+    <meta name="googlebot" content="noodp" />
+    {% if site.seo.twitter %}
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:title"
+      content="
+          {% if page.title %}
+            {{ page.title }}
+          {% else %}
+            {{ site.title }} {{ title }}
+          {% endif %}"
+    />
+    <meta
+      name="twitter:description"
+      content="
+          {% if page.description %}
+            {{ page.description }}
+          {% else %}
+            {{ site.description }}
+          {% endif %}"
+    />
+    <meta name="twitter:creator" content="@{{ site.seo.twitter }}" />
+    <meta name="twitter:url" content="{{ site.url }}{{ page.url }}" />
+    <meta name="twitter:image" content="{{ site.logo }}" />
+    {% endif %}
+    <meta property="og:locale" content="en_IN" />
+    <meta property="og:locale:alternate" content="en_GB" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="og:locale:alternate" content="en_HK" />
+    <meta property="og:locale:alternate" content="en_DE" />
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:title"
+      content="
+        {% if page.title %}
+          {{ page.title }}
+        {% else %}
+          {{ site.title }} {{ title }}
+        {% endif %}"
+    />
+    <meta
+      property="og:description"
+      content="
+        {% if page.description %}
+          {{ page.description }}
+        {% else %}
+          {{ site.description }}
+        {% endif %}"
+    />
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+    <meta property="og:site_name" content="{{ site.title }} {{ title }}" />
+    <meta property="og:image" content="{{ site.logo }}" />
+    {% if site.seo.bing_verification %}
+    <meta name="msvalidate.01" content="{{ site.seo.bing_verification }}" />
+    {% endif %} {% endif %}
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <title>{{ site.title }} {{ title }}</title>
+    <link rel="stylesheet" href={{
+      "stylesheets/style.css" | url | safe
+    }}>
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=<ANALYTICS_CODE>>"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "ANALYTICS_CODE");
+    </script>
+  </head>
+
+  <body>
+    {{ content | safe }}
+  </body>
+</html>
