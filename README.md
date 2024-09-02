@@ -84,18 +84,22 @@ module.exports = function(eleventyConfig) {
 The template follows a basic directory structure:
 
 ```bash
-eleventy-project-template/
-├── src/
-│   ├── _includes/         # Directory for reusable components (e.g., layouts, partials)
-│   ├── assets/            # Static assets (images, fonts, etc.)
-│   ├── css/               # Sass files for styles
-│   ├── scripts/           # JavaScript files
-│   ├── humans.txt         # Meta file
-│   ├── robots.txt         # Meta file
-│   └── sitemap.xml        # Sitemap file
-├── .eleventy.js           # Eleventy configuration file
-├── package.json           # Project metadata and dependencies
-└── README.md              # Project information and usage instructions
+eleventy-project-template/ 
+├── src/ 
+│   ├── _data/ # Directory for global data files 
+│   ├── _includes/ # Directory for reusable components (e.g., layouts, partials) 
+│   ├── assets/ # Static assets (images, fonts, etc.) 
+│   ├── stylesheets/ # Stylesheets, possibly Sass or CSS files 
+│   ├── userDetails/ # User-specific details or data 
+│   ├── humans.txt # Meta file 
+│   ├── index.njk # Main template file 
+│   ├── robots.txt # Meta file 
+│   └── sitemap.xml # Sitemap file 
+├── .eleventy.js # Eleventy configuration file 
+├── .gitignore # Git ignore file 
+├── package-lock.json # Auto-generated lock file for exact dependency versions 
+├── package.json # Project metadata and dependencies 
+└── README.md # Project information and usage instructions
 ```
 
 ## Customization
