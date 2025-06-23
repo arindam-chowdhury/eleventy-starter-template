@@ -1,7 +1,287 @@
 ---
-title: "Home"
-layout: "base.njk"
+title: Design System Variables Showcase
+layout: "layouts/base.njk"
+permalink: /
 ---
-<main>
-    <h1>Eleventy Starter Page for new Project</h1>
-</main>
+
+<div class="container">
+  <h1>Design System Variables Showcase</h1>
+  <p>This page visually represents the core design tokens defined in your Eleventy project's stylesheet primitives.</p>
+
+  <section>
+    <h2>Colors</h2>
+    <div class="color-swatch-grid">
+      {# Primary Colors #}
+      <div class="color-swatch">
+        <div class="color-box" style="background-color: var(--color-primary);"></div>
+        <div class="color-info">
+          <div class="color-name">--color-primary</div>
+          <div class="color-value">#007bff</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="color-box" style="background-color: var(--color-primary-light);"></div>
+        <div class="color-info">
+          <div class="color-name">--color-primary-light</div>
+          <div class="color-value">#66b0ff</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="color-box" style="background-color: var(--color-primary-dark);"></div>
+        <div class="color-info">
+          <div class="color-name">--color-primary-dark</div>
+          <div class="color-value">#0056b3</div>
+        </div>
+      </div>
+
+      {# Secondary Colors #}
+      <div class="color-swatch">
+        <div class="color-box" style="background-color: var(--color-secondary);"></div>
+        <div class="color-info">
+          <div class="color-name">--color-secondary</div>
+          <div class="color-value">#6c757d</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="color-box" style="background-color: var(--color-secondary-light);"></div>
+        <div class="color-info">
+          <div class="color-name">--color-secondary-light</div>
+          <div class="color-value">#a8b0b9</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="color-box" style="background-color: var(--color-secondary-dark);"></div>
+        <div class="color-info">
+          <div class="color-name">--color-secondary-dark</div>
+          <div class="color-value">#545b62</div>
+        </div>
+      </div>
+
+      {# Neutral Colors #}
+      <div class="color-swatch">
+        <div class="color-box" style="background-color: var(--color-neutral-light); border: 1px solid #ccc;"></div>
+        <div class="color-info">
+          <div class="color-name">--color-neutral-light</div>
+          <div class="color-value">#f8f9fa</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="color-box" style="background-color: var(--color-neutral-medium);"></div>
+        <div class="color-info">
+          <div class="color-name">--color-neutral-medium</div>
+          <div class="color-value">#ced4da</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="color-box" style="background-color: var(--color-neutral-dark);"></div>
+        <div class="color-info">
+          <div class="color-name">--color-neutral-dark</div>
+          <div class="color-value">#333f33</div>
+        </div>
+      </div>
+
+      {# Accent Colors #}
+      <div class="color-swatch">
+        <div class="color-box" style="background-color: var(--color-accent);"></div>
+        <div class="color-info">
+          <div class="color-name">--color-accent</div>
+          <div class="color-value">#0aa777</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="color-box" style="background-color: var(--color-accent-light);"></div>
+        <div class="color-info">
+          <div class="color-name">--color-accent-light</div>
+          <div class="color-value">#0ff888</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="color-box" style="background-color: var(--color-accent-dark);"></div>
+        <div class="color-info">
+          <div class="color-name">--color-accent-dark</div>
+          <div class="color-value">#1e7e34</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Typography</h2>
+
+    <div class="font-example">
+      <h1 class="font-heading-1">Heading 1 Example <small>(--font-size-heading-1, --font-family-heading)</small></h1>
+    </div>
+    <div class="font-example">
+      <h2 class="font-heading-2">Heading 2 Example <small>(--font-size-heading-2, --font-family-heading)</small></h2>
+    </div>
+    <div class="font-example">
+      <h3 class="font-heading-3">Heading 3 Example <small>(--font-size-heading-3, --font-family-heading)</small></h3>
+    </div>
+    <div class="font-example">
+      <h4 class="font-heading-4">Heading 4 Example <small>(--font-size-heading-4, --font-family-heading)</small></h4>
+    </div>
+    <div class="font-example">
+      <h5 class="font-heading-5">Heading 5 Example <small>(--font-size-heading-5, --font-family-heading)</small></h5>
+    </div>
+    <div class="font-example">
+      <h6 class="font-heading-6">Heading 6 Example <small>(--font-size-heading-6, --font-family-heading)</small></h6>
+    </div>
+
+    <div class="font-example">
+      <p style="font-family: var(--font-family-primary); font-size: var(--font-size-base); line-height: var(--line-height-paragraph);">
+        This is a paragraph with <code>--font-family-primary</code>, <code>--font-size-base</code>, and <code>--line-height-paragraph</code>. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+    </div>
+
+    <div class="font-example">
+      <p><strong>Font Weights:</strong></p>
+      <p style="font-weight: var(--font-weight-thin);">Thin (--font-weight-thin)</p>
+      <p style="font-weight: var(--font-weight-extra-light);">Extra Light (--font-weight-extra-light)</p>
+      <p style="font-weight: var(--font-weight-light);">Light (--font-weight-light)</p>
+      <p style="font-weight: var(--font-weight-regular);">Regular (--font-weight-regular)</p>
+      <p style="font-weight: var(--font-weight-medium);">Medium (--font-weight-medium)</p>
+      <p style="font-weight: var(--font-weight-semi-bold);">Semi-Bold (--font-weight-semi-bold)</p>
+      <p style="font-weight: var(--font-weight-bold);">Bold (--font-weight-bold)</p>
+      <p style="font-weight: var(--font-weight-extra-bold);">Extra Bold (--font-weight-extra-bold)</p>
+      <p style="font-weight: var(--font-weight-black);">Black (--font-weight-black)</p>
+    </div>
+
+    <div class="font-example">
+      <p><strong>Line Heights:</strong></p>
+      <p style="line-height: var(--line-height-normal); border: 1px dashed var(--color-neutral-medium);">Normal line height (<code>--line-height-normal</code>). This text demonstrates the standard line spacing.</p>
+      <p style="line-height: var(--line-height-heading); border: 1px dashed var(--color-neutral-medium);">Heading line height (<code>--line-height-heading</code>). Typically tighter for headlines.</p>
+      <p style="line-height: var(--line-height-paragraph); border: 1px dashed var(--color-neutral-medium);">Paragraph line height (<code>--line-height-paragraph</code>). Often more generous for readability.</p>
+    </div>
+
+    <div class="font-example">
+      <p><strong>Letter Spacing:</strong></p>
+      <p style="letter-spacing: var(--letter-spacing-normal);">Normal letter spacing (<code>--letter-spacing-normal</code>)</p>
+      <p style="letter-spacing: var(--letter-spacing-wide);">Wide letter spacing (<code>--letter-spacing-wide</code>)</p>
+      <p style="letter-spacing: var(--letter-spacing-tight);">Tight letter spacing (<code>--letter-spacing-tight</code>)</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Spacing</h2>
+    <p>Visual representation of your spacing tokens using padding and margin.</p>
+
+    <h3>Padding Examples</h3>
+    <div class="spacing-box-grid">
+      <div class="spacing-box spacing-box-padding" style="padding: var(--spacing-2xs);">
+        <p>2xs<br>(0.25rem)</p>
+      </div>
+      <div class="spacing-box spacing-box-padding" style="padding: var(--spacing-xs);">
+        <p>xs<br>(0.5rem)</p>
+      </div>
+      <div class="spacing-box spacing-box-padding" style="padding: var(--spacing-sm);">
+        <p>sm<br>(0.75rem)</p>
+      </div>
+      <div class="spacing-box spacing-box-padding" style="padding: var(--spacing-base);">
+        <p>base<br>(1rem)</p>
+      </div>
+      <div class="spacing-box spacing-box-padding" style="padding: var(--spacing-lg);">
+        <p>lg<br>(1.5rem)</p>
+      </div>
+      <div class="spacing-box spacing-box-padding" style="padding: var(--spacing-xl);">
+        <p>xl<br>(2rem)</p>
+      </div>
+      <div class="spacing-box spacing-box-padding" style="padding: var(--spacing-2xl);">
+        <p>2xl<br>(3rem)</p>
+      </div>
+      <div class="spacing-box spacing-box-padding" style="padding: var(--spacing-3xl);">
+        <p>3xl<br>(4rem)</p>
+      </div>
+      <div class="spacing-box spacing-box-padding" style="padding: var(--spacing-4xl);">
+        <p>4xl<br>(5rem)</p>
+      </div>
+    </div>
+
+    <h3>Margin Examples</h3>
+    <p>These boxes have a `margin-right` applied to them.</p>
+    <div style="background-color: var(--color-secondary-light); padding: var(--spacing-sm);">
+      <div class="spacing-box spacing-box-margin" style="margin-right: var(--spacing-2xs);">Margin 2xs</div>
+      <div class="spacing-box spacing-box-margin" style="margin-right: var(--spacing-xs);">Margin xs</div>
+      <div class="spacing-box spacing-box-margin" style="margin-right: var(--spacing-sm);">Margin sm</div>
+      <div class="spacing-box spacing-box-margin" style="margin-right: var(--spacing-base);">Margin base</div>
+      <div class="spacing-box spacing-box-margin" style="margin-right: var(--spacing-lg);">Margin lg</div>
+      <div class="spacing-box spacing-box-margin" style="margin-right: var(--spacing-xl);">Margin xl</div>
+      <div class="spacing-box spacing-box-margin" style="margin-right: var(--spacing-2xl);">Margin 2xl</div>
+      <div class="spacing-box spacing-box-margin" style="margin-right: var(--spacing-3xl);">Margin 3xl</div>
+      <div class="spacing-box spacing-box-margin" style="margin-right: var(--spacing-4xl);">Margin 4xl</div>
+    </div>
+
+    <h3>Container & Grid Spacing</h3>
+    <p><code>--container-max-width: {{ "--container-max-width" | url }}</code></p>
+    <p><code>--container-padding: {{ "--container-padding" | url }}</code></p>
+    <p><code>--grid-gap: {{ "--grid-gap" | url }}</code></p>
+    <p><code>--flex-gap: {{ "--flex-gap" | url }}</code></p>
+    <div class="spacing-box-grid" style="gap: var(--grid-gap); border: 2px dashed var(--color-accent); padding: var(--spacing-base);">
+      <div class="spacing-box spacing-box-padding" style="padding: var(--spacing-base);">Grid Item</div>
+      <div class="spacing-box spacing-box-padding" style="padding: var(--spacing-base);">Grid Item</div>
+      <div class="spacing-box spacing-box-padding" style="padding: var(--spacing-base);">Grid Item</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Breakpoints</h2>
+    <p>These are the defined screen size breakpoints. Resize your browser window to see the "Current Breakpoint" change.</p>
+    <ul>
+      <li class="breakpoint-item"><code>--breakpoint-xs: {{ "--breakpoint-xs" | url }}</code> (0)</li>
+      <li class="breakpoint-item"><code>--breakpoint-sm: {{ "--breakpoint-sm" | url }}</code> (576px)</li>
+      <li class="breakpoint-item"><code>--breakpoint-md: {{ "--breakpoint-md" | url }}</code> (768px)</li>
+      <li class="breakpoint-item"><code>--breakpoint-lg: {{ "--breakpoint-lg" | url }}</code> (992px)</li>
+      <li class="breakpoint-item"><code>--breakpoint-xl: {{ "--breakpoint-xl" | url }}</code> (1200px)</li>
+      <li class="breakpoint-item"><code>--breakpoint-xxl: {{ "--breakpoint-xxl" | url }}</code> (1400px)</li>
+    </ul>
+    <div class="responsive-indicator"></div>
+  </section>
+
+  <section>
+    <h2>Component States</h2>
+    <div class="component-states-grid">
+      <div class="component-state-item">
+        <h4>Button States</h4>
+        <button class="button-demo">Default Button</button>
+        <button class="button-demo button-demo--hover">Hover Button</button>
+        <button class="button-demo button-demo--active">Active Button</button>
+        <button class="button-demo" disabled>Disabled Button</button>
+      </div>
+
+      <div class="component-state-item">
+        <h4>Input States</h4>
+        <div class="input-group">
+          <label for="input-default">Default Input:</label>
+          <input type="text" id="input-default" class="input-demo" placeholder="Enter text">
+        </div>
+        <div class="input-group">
+          <label for="input-focus">Focus Input:</label>
+          <input type="text" id="input-focus" class="input-demo input-demo--focus" value="I have focus">
+        </div>
+        <div class="input-group">
+          <label for="input-disabled">Disabled Input:</label>
+          <input type="text" id="input-disabled" class="input-demo" placeholder="Disabled" disabled>
+        </div>
+        <div class="input-group">
+          <label for="input-error">Error Input:</label>
+          <input type="text" id="input-error" class="input-demo input-demo--error" value="Error message">
+        </div>
+        <div class="input-group">
+          <label for="input-valid">Valid Input:</label>
+          <input type="text" id="input-valid" class="input-demo input-demo--valid" value="Valid input">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Other Tokens</h2>
+    <p>Additional global tokens.</p>
+    <ul>
+      <li class="breakpoint-item"><code>--icon-size-small: {{ "--icon-size-small" | url }}</code> (16px)</li>
+      <li class="breakpoint-item"><code>--icon-size-medium: {{ "--icon-size-medium" | url }}</code> (24px)</li>
+      <li class="breakpoint-item"><code>--icon-size-large: {{ "--icon-size-large" | url }}</code> (32px)</li>
+      <li class="breakpoint-item"><code>--page-padding: {{ "--page-padding" | url }}</code></li>
+    </ul>
+  </section>
+
+</div>

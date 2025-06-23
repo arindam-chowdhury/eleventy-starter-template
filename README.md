@@ -100,6 +100,102 @@ eleventy-project-template/
 ├── package-lock.json # Auto-generated lock file for exact dependency versions 
 ├── package.json # Project metadata and dependencies 
 └── README.md # Project information and usage instructions
+
+
+#new folder structure
+.
+├── _site/                   # Eleventy's output directory (generated)
+├── src/                     # Your source files for Eleventy
+│   ├── _data/
+│   │   ├── site.json
+│   │   └── navigation.json
+│   │
+│   ├── _includes/
+│   │   ├── layouts/
+│   │   │   ├── base.njk
+│   │   │   ├── post.njk
+│   │   │   ├── post.njk
+│   │   │   ├──post.njk
+│   │   │   ├──navbar.njk
+│   │   │   └── footer.njk 
+│   │   │
+│   │   ├── components/
+│   │   │   ├── card.njk
+│   │   │   ├── button.njk
+│   │   │   ├── carousel.njk 
+│   │   │   └── form.njk    
+│   │   │
+│   │   └── partials/
+│   │      
+│   │
+│   ├── assets/              # Static assets (images, icons, fonts)
+│   │   ├── images/
+│   │   │   └── product-a.jpg
+│   │   │   └── product-b.jpg
+│   │   ├── icons/
+│   │   │   ├── phone.svg
+│   │   │   ├── email.svg
+│   │   │   └── location.svg
+│   │   └── fonts/
+│   │       └── Inter-Regular.woff2 # Placeholder for a font file
+│   │
+│   ├── scripts/
+│   │   ├── arrowRotate.js 
+│   │   ├── carousel.js    
+│   │   └── formSubmit.js  
+│   │
+│   ├── stylesheets/ # Stylesheets, possibly Sass or CSS files 
+│   │   ├── tokens/  # For design tokens (colors, typography, etc.)
+│   │   │   ├── primitives/
+│   │   │   │   ├── _colors.scss
+│   │   │   │   ├── _typography.scss
+│   │   │   │   ├── _spacing.scss
+│   │   │   │   ├── _borders.scss
+│   │   │   │   ├── _shadows.scss
+│   │   │   │   ├── _z-index.scss
+│   │   │   │   ├── _breakpoints.scss
+│   │   │   │   └── _index.scss
+│   │   │   ├── _component-states.scss
+│   │   │   ├── _misc-tokens.scss
+│   │   │   └── _index.scss
+│   │   │
+│   │   ├── base/       # For global styles (reset, body, html)
+│   │   │   ├── _reset.scss
+│   │   │   └── _global.scss
+│   │   │
+│   │   ├── layout/     # For overall page layout (container, navbar)
+│   │   │   ├── _container.scss # New file for container styles
+│   │   │   ├── _navbar.scss
+│   │   │   └── _footer.scss
+│   │   │
+│   │   ├── components/  # For reusable UI components (button, card, etc.)
+│   │   │   ├── _button.scss
+│   │   │   ├── _card.scss
+│   │   │   ├── _carousel.scss # Basic example
+│   │   │   └── _form.scss     # Basic example
+│   │   │
+│   │   ├── pages/      # For page-specific styles (home, contact, about)
+│   │   │   ├── _home.scss
+│   │   │   ├── _contact.scss
+│   │   │   └── _about.scss # Basic example
+│   │   │
+│   │   └── main.scss  # The main entry point that imports all others
+│   │
+│   ├── pages/
+│   │   ├── about.njk
+│   │   ├── services.njk # Basic example
+│   │   └── contact.njk
+│   │
+│   ├── index.njk # Main template file 
+│   ├── humans.txt
+│   ├── robots.txt
+│   └── sitemap.xml
+│
+├── .eleventy.js # Eleventy configuration file 
+├── .gitignore
+├── package.json
+├── package-lock.json
+└── README.md
 ```
 
 ## Customization

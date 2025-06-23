@@ -1,0 +1,14 @@
+:root {
+  // Border Radii (aligned with usage in _navbar.scss)
+  --border-radius-sm: 4px;   
+  --border-radius-md: 8px;   
+  --border-radius-lg: 12px;  
+  --border-radius-full: 50%;  
+
+  // Border Widths
+  --border-width-thin: 1px;
+  --border-width-medium: 2px;
+  --border-width-thick: 3px;
+
+  --border-color-default: var(--color-neutral-medium, #cccccc); 
+}

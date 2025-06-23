@@ -1,0 +1,89 @@
+/* src/stylesheets/components/_card.scss */
+
+.card {
+  background-color: var(--card-bg-color); /* Using token */
+  border: var(--border-width-thin) solid var(--card-border-color); /* Using tokens */
+  border-radius: var(--radius-medium); /* Using token */
+  box-shadow: var(--card-shadow); /* Using token */
+  color: var(--card-text-color); /* Using token */
+  padding: var(--spacing-medium); /* Using token */
+  transition: all 0.3s ease;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  max-width: 350px; /* Max width for cards in a grid */
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--card-hover-shadow); /* Using token */
+    background-color: var(--card-hover-bg-color);
+    border-color: var(--card-hover-border-color);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: var(--card-active-shadow);
+    background-color: var(--card-active-bg-color);
+    border-color: var(--card-active-border-color);
+  }
+
+  &--disabled {
+    background-color: var(--card-disabled-bg-color);
+    border-color: var(--card-disabled-border-color);
+    box-shadow: var(--card-disabled-shadow);
+    cursor: not-allowed;
+    opacity: 0.7;
+    transform: none; /* No hover/active effects */
+  }
+}
+
+.card__image {
+  width: 100%;
+  max-height: 150px;
+  object-fit: cover;
+  border-radius: var(--radius-small);
+  margin-bottom: var(--spacing-small);
+}
+
+.card__title {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-heading-3);
+  color: var(--card-text-color);
+  margin-top: 0;
+  margin-bottom: var(--spacing-small);
+}
+
+.card__text {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-paragraph);
+  color: var(--card-text-color);
+  margin-bottom: 0;
+}
+
+.card__link {
+  color: var(--link-color);
+  text-decoration: var(--link-text-decoration);
+  margin-top: var(--spacing-small);
+
+  &:hover {
+    color: var(--link-hover-color);
+    text-decoration: var(--link-hover-text-decoration);
+  }
+}
+
+@media (max-width: var(--breakpoint-md)) {
+  .card {
+    padding: var(--spacing-small);
+  }
+  .card__image {
+    max-height: 100px;
+  }
+  .card__title {
+    font-size: var(--font-size-heading-4);
+  }
+}

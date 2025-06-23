@@ -1,0 +1,101 @@
+/* src/stylesheets/tokens/_component-states.scss */
+
+:root {
+  // Button States.pdf]
+  --button-bg-color: var(--color-primary);
+  --button-text-color: #fff;
+  --button-border-color: var(--color-primary);
+
+  --button-hover-bg-color: var(--color-primary-dark);
+  --button-hover-text-color: #fff;
+  --button-hover-border-color: var(--color-primary-dark);
+
+  --button-active-bg-color: var(--color-primary-dark);
+  --button-active-text-color: #fff;
+  --button-active-border-color: var(--color-primary-dark);
+
+  --button-disabled-bg-color: var(--color-neutral-medium);
+  --button-disabled-text-color: var(--color-neutral-dark);
+  --button-disabled-border-color: var(--color-neutral-medium);
+
+  // Input States.pdf]
+  --input-bg-color: #fff;
+  --input-border-color: var(--color-neutral-medium);
+  --input-text-color: var(--color-neutral-dark);
+  --input-placeholder-color: var(--color-neutral-medium);
+
+  --input-focus-border-color: var(--color-primary);
+  --input-focus-text-color: var(--color-neutral-dark);
+  --input-focus-bg-color: #fff;
+
+  --input-disabled-bg-color: var(--color-neutral-light);
+  --input-disabled-border-color: var(--color-neutral-medium);
+  --input-disabled-text-color: var(--color-neutral-dark);
+  --input-disabled-placeholder-color: var(--color-neutral-medium);
+
+  --input-error-border-color: #dc3545;
+  --input-error-text-color: #dc3545;
+  --input-error-bg-color: #fff;
+
+  --input-valid-border-color: var(--color-accent);
+  --input-valid-text-color: var(--color-accent);
+
+  // Link States.pdf]
+  --link-color: var(--color-primary);
+  --link-text-decoration: none;
+  --link-hover-color: var(--color-primary-dark);
+  --link-hover-text-decoration: underline;
+  --link-active-color: var(--color-primary-dark);
+  --link-active-text-decoration: underline;
+  --link-visited-color: #6610f2;
+
+  // Card States.pdf]
+  --card-bg-color: #fff;
+  --card-border-color: var(--color-neutral-medium);
+  --card-text-color: var(--color-neutral-dark);
+  --card-shadow: var(--shadow-light);
+
+  --card-hover-bg-color: #f0f0f0;
+  --card-hover-border-color: var(--color-primary);
+  --card-hover-shadow: var(--shadow-medium);
+
+  --card-active-bg-color: #e9ecef;
+  --card-active-border-color: var(--color-primary-dark);
+  --card-active-shadow: var(--shadow-medium);
+
+  --card-disabled-bg-color: var(--color-neutral-light);
+  --card-disabled-border-color: var(--color-neutral-medium);
+  --card-disabled-shadow: none;
+
+  // Modal States.pdf]
+  --modal-bg-color: #fff;
+  --modal-border-color: var(--color-neutral-medium);
+  --modal-text-color: var(--color-neutral-dark);
+  --modal-padding: var(--spacing-x-large);
+
+  --modal-overlay-bg-color: rgba(0, 0, 0, 0.7);
+  --modal-overlay-opacity: 0.7;
+
+  --modal-close-btn-bg-color: transparent;
+  --modal-close-btn-hover-bg-color: var(--color-neutral-light);
+  --modal-close-btn-border-color: transparent;
+
+  --modal-active-bg-color: #fff;
+  --modal-active-text-color: var(--color-neutral-dark);
+
+  // Tooltip States.pdf]
+  --tooltip-bg-color: var(--color-neutral-dark);
+  --tooltip-text-color: #fff;
+
+  --tooltip-hover-bg-color: #555;
+  --tooltip-position-top: -10px;
+  --tooltip-position-bottom: auto;
+  --tooltip-position-left: auto;
+  --tooltip-position-right: -10px;
+
+  // Spinner / Loader States.pdf]
+  --spinner-bg-color: transparent;
+  --spinner-border-color: var(--color-primary);
+  --spinner-size: 32px;
+  --spinner-animation: spin 1s linear infinite; // Needs @keyframes spin definition in _global.scss
+}

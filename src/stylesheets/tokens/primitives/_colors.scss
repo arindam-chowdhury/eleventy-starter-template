@@ -1,0 +1,24 @@
+/* src/stylesheets/tokens/primitives/_colors.scss */
+
+:root {
+  // Primary Colors
+  --color-primary: #007bff;
+  --color-primary-light: #66b0ff;
+  --color-primary-dark: #0056b3;
+
+  // Secondary Colors
+  --color-secondary: #6c757d;
+  --color-secondary-light: #a8b0b9;
+  --color-secondary-dark: #545b62;
+
+  // Neutral Colors (Grayscale)
+  --color-neutral-light: #f8f9fa;
+  --color-neutral-medium: #ced4da;
+  --color-neutral-dark: #333f33;
+
+  // Accent Colors
+  --color-accent: #0aa777;
+  --color-accent-light: #0ff888;
+  --color-accent-dark: #1e7e34;
+
+}

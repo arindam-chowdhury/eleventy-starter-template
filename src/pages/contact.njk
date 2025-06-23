@@ -1,0 +1,88 @@
+---
+layout: "layouts/base.njk"
+title: Contact Us
+permalink: /contact/index.html
+---
+
+<main class="contact-page">
+    {# Hero Section #}
+    <section class="contact-hero">
+        <div class="container">
+            <h1>Contact us</h1>
+        </div>
+    </section>
+
+    {# Contact Cards Section #}
+    <section class="contact-cards-section">
+        <div class="container contact-cards-grid">
+            {# Call Us Card #}
+            <div class="contact-card">
+                <div class="contact-card__icon">
+                    <img src="/assets/icons/phone.svg" alt="Phone Icon">
+                </div>
+                <h2 class="contact-card__title">Call Us</h2>
+                <p class="contact-card__detail">+91 90230 47732</p>
+            </div>
+
+            {# Email Card #}
+            <div class="contact-card">
+                <div class="contact-card__icon">
+                    <img src="/assets/icons/email.svg" alt="Email Icon">
+                </div>
+                <h2 class="contact-card__title">Email</h2>
+                <p class="contact-card__detail">ccare@hearnu.com</p>
+            </div>
+
+            {# Our Location Card #}
+            <div class="contact-card">
+                <div class="contact-card__icon">
+                    <img src="/assets/icons/location.svg" alt="Location Icon">
+                </div>
+                <h2 class="contact-card__title">Our Location</h2>
+                <p class="contact-card__detail">H-1 Hub Complex, 3rd Floor, Prahalad Pures, KCG Campus, opp. PRL, Navrangpura, Ahmedabad, Gujarat 380015</p>
+            </div>
+        </div>
+    </section>
+
+    {# Hours and Map Section #}
+    <section class="hours-map-section">
+        <div class="container hours-map-grid">
+            {# Hours Table #}
+            <div class="hours-table-wrapper">
+                <h2 class="hours-table__title">Hours:</h2>
+                <table class="hours-table">
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Wednesday</td><td>10 am - 7 pm</td></tr>
+                        <tr><td>Thursday</td><td>10 am - 7 pm</td></tr>
+                        <tr><td>Friday</td><td>10 am - 7 pm</td></tr>
+                        <tr><td>Saturday</td><td>10 am - 7 pm</td></tr>
+                        <tr><td>Sunday</td><td>Closed</td></tr>
+                        <tr><td>Monday</td><td>10 am - 7 pm</td></tr>
+                        <tr><td>Tuesday</td><td>10 am - 7 pm</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            {# Map Embed #}
+            <div class="map-embed">
+                <h2 class="map-embed__title">Wahwar Innovations Private Li...</h2>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.954009653066!2d72.5350913!3d23.0253457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e8484196c8a77%3A0xb3e18a8b8b3e18a8!2sKCG%20Campus%2C%20Navrangpura%2C%20Ahmedabad%2C%20Gujarat%20380015!5e0!3m2!1sen!2sin!4v1678888888888!5m2!1sen!2sin"
+                    width="100%"
+                    height="450"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+                <a href="https://maps.app.goo.gl/YourActualMapLink" target="_blank" rel="noopener noreferrer" class="map-embed__link">View larger map</a>
+            </div>
+        </div>
+    </section>
+</main>

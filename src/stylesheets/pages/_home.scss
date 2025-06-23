@@ -1,0 +1,183 @@
+
+  .container {
+    max-width: var(--container-max-width);
+    padding: var(--container-padding);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  section {
+    margin-bottom: var(--spacing-3xl);
+    padding-bottom: var(--spacing-xl);
+    border-bottom: 1px solid var(--color-neutral-medium);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-heading);
+    line-height: var(--line-height-heading);
+    margin-bottom: var(--spacing-base);
+  }
+
+  h1 { font-size: var(--font-size-heading-1); }
+  h2 { font-size: var(--font-size-heading-2); }
+  h3 { font-size: var(--font-size-heading-3); }
+  h4 { font-size: var(--font-size-heading-4); }
+  h5 { font-size: var(--font-size-heading-5); }
+  h6 { font-size: var(--font-size-heading-6); }
+
+  p {
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-paragraph);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  small {
+    font-size: var(--font-size-sm);
+  }
+
+  code {
+    font-family: var(--font-family-secondary);
+  }
+
+  .color-swatch-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: var(--grid-gap);
+  }
+
+  .color-swatch {
+    border-radius: var(--border-radius-base); /* Assuming you'll add this token later */
+    overflow: hidden;
+    border: 1px solid var(--color-neutral-medium);
+  }
+
+  .color-box {
+    width: 100%;
+    height: 100px;
+  }
+
+  .color-info {
+    padding: var(--spacing-sm);
+    background-color: var(--color-neutral-light);
+  }
+
+  .color-name {
+    font-weight: var(--font-weight-medium);
+    margin-bottom: var(--spacing-2xs);
+    color: var(--color-neutral-dark);
+  }
+
+  .color-value {
+    font-size: var(--font-size-sm);
+    color: var(--color-secondary-dark);
+  }
+
+  .font-example {
+    margin-bottom: var(--spacing-lg);
+    padding: var(--spacing-base);
+    border: 1px solid var(--color-neutral-medium);
+    border-radius: var(--border-radius-base); /* Assuming this token */
+  }
+
+  .spacing-box-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--flex-gap);
+  }
+
+  .spacing-box {
+    background-color: var(--color-primary-light);
+    color: white;
+    text-align: center;
+    font-weight: var(--font-weight-bold);
+    min-width: 80px; /* To make them visible */
+    border-radius: var(--border-radius-base);
+  }
+
+  .spacing-box-padding {
+    border: 1px solid var(--color-primary-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .spacing-box-margin {
+    border: 1px dashed var(--color-secondary);
+    display: inline-block; /* For margin demo */
+  }
+
+  .breakpoint-item {
+    margin-bottom: var(--spacing-xs);
+    padding: var(--spacing-sm);
+    background-color: var(--color-neutral-light);
+    border-left: 5px solid var(--color-primary);
+    border-radius: var(--border-radius-base);
+  }
+
+  .component-states-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--grid-gap);
+  }
+
+  .component-state-item {
+    padding: var(--spacing-base);
+    border: 1px solid var(--color-neutral-medium);
+    border-radius: var(--border-radius-base);
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-base);
+  }
+
+  .component-state-item h4 {
+    margin-top: 0;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-primary-dark);
+  }
+
+  /* Specific styles for component states using your SCSS imports below */
+  .button-demo {
+    /* Styles will come from _button.scss */
+  }
+
+  .input-demo {
+    /* Styles will come from _form.scss */
+  }
+
+  .input-group {
+    width: 100%;
+    margin-bottom: var(--spacing-base);
+  }
+
+  /* Responsive helper for breakpoints section */
+  .responsive-indicator {
+    padding: var(--spacing-base);
+    background-color: var(--color-accent);
+    color: white;
+    border-radius: var(--border-radius-base);
+    text-align: center;
+    margin-top: var(--spacing-base);
+    font-weight: var(--font-weight-bold);
+  }
+
+  @media (max-width: 575px) {
+    .responsive-indicator::before { content: "Current Breakpoint: Extra Small (XS)"; }
+  }
+  @media (min-width: 576px) and (max-width: 767px) {
+    .responsive-indicator::before { content: "Current Breakpoint: Small (SM)"; }
+  }
+  @media (min-width: 768px) and (max-width: 991px) {
+    .responsive-indicator::before { content: "Current Breakpoint: Medium (MD)"; }
+  }
+  @media (min-width: 992px) and (max-width: 1199px) {
+    .responsive-indicator::before { content: "Current Breakpoint: Large (LG)"; }
+  }
+  @media (min-width: 1200px) and (max-width: 1399px) {
+    .responsive-indicator::before { content: "Current Breakpoint: Extra Large (XL)"; }
+  }
+  @media (min-width: 1400px) {
+    .responsive-indicator::before { content: "Current Breakpoint: Extra Extra Large (XXL)"; }
+  }
+

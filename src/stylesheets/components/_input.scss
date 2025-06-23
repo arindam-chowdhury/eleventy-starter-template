@@ -1,0 +1,55 @@
+
+.input-demo {
+  /* Default Input Styles */
+  display: block;
+  width: 100%;
+  padding: var(--spacing-xs) var(--spacing-sm); /* Using spacing tokens */
+  font-family: var(--font-family-primary); /* Using typography token */
+  font-size: var(--font-size-base); /* Using typography token */
+  line-height: var(--line-height-normal); /* Using typography token */
+  border-radius: var(--border-radius-base, 0.25rem); /* Fallback */
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+
+  /* State-specific properties from _component-states.scss */
+  background-color: var(--input-bg-color);
+  border: 1px solid var(--input-border-color);
+  color: var(--input-text-color);
+
+  &::placeholder {
+    color: var(--input-placeholder-color);
+  }
+
+  &:focus,
+  &.input-demo--focus { /* Added class for demo purposes */
+    outline: none;
+    border-color: var(--input-focus-border-color);
+    box-shadow: 0 0 0 0.2rem rgba(var(--color-primary-dark), 0.25); /* Simple focus ring */
+    background-color: var(--input-focus-bg-color);
+    color: var(--input-focus-text-color);
+  }
+
+  &:disabled,
+  &[disabled] {
+    cursor: not-allowed;
+    background-color: var(--input-disabled-bg-color);
+    border-color: var(--input-disabled-border-color);
+    color: var(--input-disabled-text-color);
+    &::placeholder {
+      color: var(--input-disabled-placeholder-color);
+    }
+  }
+}
+
+.input-group {
+  margin-bottom: var(--spacing-base);
+  width: 100%;
+
+  label {
+    display: block;
+    margin-bottom: var(--spacing-2xs);
+    font-size: var(--font-size-sm);
+    color: var(--color-neutral-dark);
+  }
+}

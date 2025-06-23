@@ -1,0 +1,40 @@
+/* src/stylesheets/tokens/primitives/_typography.scss */
+
+:root {
+  // Font Families
+  --font-family-primary: "Inter", sans-serif;
+  --font-family-secondary: "Roboto Mono", monospace;
+  --font-family-heading: "Georgia", serif;
+
+  // Font Sizes
+  --font-size-base: 1rem;
+  --font-size-sm: 0.875rem; 
+  --font-size-lg: 1.125rem; 
+  --font-size-heading-1: 3rem;
+  --font-size-heading-2: 2.5rem;
+  --font-size-heading-3: 2rem;
+  --font-size-heading-4: 1.75rem; 
+  --font-size-heading-5: 1.5rem;
+  --font-size-heading-6: 1.25rem;
+
+  // Font Weights
+  --font-weight-thin: 100; 
+  --font-weight-extra-light: 200; 
+  --font-weight-light: 300; 
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semi-bold: 600; 
+  --font-weight-bold: 700;
+  --font-weight-extra-bold: 800; 
+  --font-weight-black: 900; 
+
+  // Line Heights
+  --line-height-normal: 1.5;
+  --line-height-heading: 1.2;
+  --line-height-paragraph: 1.7;
+
+  // Letter Spacing
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.05em;
+  --letter-spacing-tight: -0.02em;
+}

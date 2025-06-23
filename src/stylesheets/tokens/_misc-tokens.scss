@@ -1,0 +1,11 @@
+/* src/stylesheets/tokens/_misc-tokens.scss */
+
+:root {
+  // Icon Sizes.pdf]
+  --icon-size-small: 16px;
+  --icon-size-medium: 24px;
+  --icon-size-large: 32px;
+
+  // Page Padding.pdf]
+  --page-padding: var(--spacing-x-large);
+}

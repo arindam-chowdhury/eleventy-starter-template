@@ -1,0 +1,15 @@
+{# src/_includes/components/button.njk #}
+<a
+  href="{{ button.href }}"
+  class="button {{ button.class or '' }}"
+  {%
+  if
+  button.disabled
+  %}aria-disabled="true"
+  tabindex="-1"
+  {%
+  endif
+  %}
+>
+  {{ button.text }}
+</a>

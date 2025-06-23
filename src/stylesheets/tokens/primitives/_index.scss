@@ -1,0 +1,9 @@
+/* src/stylesheets/tokens/primitives/_index.scss */
+
+@forward "colors";
+@forward "typography";
+@forward "spacing";
+@forward "borders";
+@forward "shadows";
+@forward "z-index";
+@forward "breakpoints";

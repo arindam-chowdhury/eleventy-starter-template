@@ -1,19 +1,55 @@
 {
-    "author": {
-        "name": "hatchtag",
-        "keywords": ["marketing strategy",
-                    "Brand Positioning",
-                    "Competitive Analysis",
-                    "Digital Marketing Services"]
+  "title": "Jayesh Logistics",
+  "description": "Sasta Nahi Sabse Achha",
+  "url": "https://jayeshlogistics.com/",
+  "logo": {
+    "url": "/assets/images/jayesh_logistics_logo_small.svg", 
+    "alt": "Jayesh Logistics Logo"
+  },
+  "author": {
+    "name": "hatchtag-design",
+    "keywords": ["Eleventy", "Starter", "Template", "Web Development"]
+  },
+  "isLive": true,
+  "seo": {
+    "google_verification": "",
+    "twitter": "",
+    "bing_verification": ""
+  },
+  "analytics": {
+    "ga_id": "UA-XXXXXXXXX-X"
+  },
+  "navigation": [ 
+    {
+      "text": "Home",
+      "url": "/"
     },
-    "description": "hatchtag india's leading stratigic design agency",
-    "isLive": true,
-    "logo": "/assets/images/hatchtag-logo.png",
-    "seo": {
-        "bing_verification": "",
-        "google_verification": "",
-        "twitter": ""
+    {
+      "text": "Services",
+      "url": "/services/"
     },
-    "title": "hatchtag - ",
-    "url": "hatchtag.design"
+    {
+      "text": "About Us",
+      "url": "/about/"
+    },
+    {
+      "text": "Investor",
+      "url": "/investor/"
+    },
+    {
+      "text": "Contact",
+      "url": "/contact/"
+    }
+  ],
+   "company": { 
+    "certifications": "An ISO 9001:2015 & ISO 14001:2015 Certified Company.",
+    "formerName": "Formerly known as Jayesh Logistics Private Limited.",
+    "copyrightName": "Jayesh Logistics Limited"
+  },
+  "social": { 
+    "facebook": "https://www.facebook.com/yourcompany",
+    "linkedin": "https://www.linkedin.com/company/yourcompany",
+    "instagram": "https://www.instagram.com/yourcompany",
+    "youtube": "https://www.youtube.com/yourcompany"
+  }
 }

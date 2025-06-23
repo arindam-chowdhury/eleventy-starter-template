@@ -1,0 +1,9 @@
+/* src/stylesheets/layout/_container.scss */
+
+.container {
+  max-width: var(--container-max-width); /* Using token */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding); /* Using token */
+  padding-right: var(--container-padding); /* Using token */
+}

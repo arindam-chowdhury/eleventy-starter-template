@@ -1,1 +1,9 @@
-# https://humanstxt.org
+/* TEAM */
+Developer: Suman Mandal (sumanmandal15135@gmail.com)
+Designer: Abhi ke lea to dev hi designer he. Engineers can do anything ~
+Project Manager: Arindam Chowdhury
+
+/* SITE */
+Last update: 2024-06-18
+Language: English
+Doctype: HTML5

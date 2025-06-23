@@ -1,0 +1,15 @@
+/* src/stylesheets/pages/_about.scss */
+
+.about-hero {
+  background-color: var(--color-secondary);
+  color: #fff;
+  padding: var(--spacing-xx-large) 0;
+  text-align: center;
+}
+
+.about-content {
+  padding: var(--spacing-x-large) 0;
+  h2 {
+    color: var(--color-primary);
+  }
+}

@@ -1,0 +1,22 @@
+/* src/stylesheets/tokens/primitives/_spacing.scss */
+
+:root {
+  --spacing-2xs: 0.25rem;
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 0.75rem; 
+  --spacing-base: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem; 
+  --spacing-3xl: 4rem; 
+  --spacing-4xl: 5rem; 
+
+
+  // Container Sizing
+  --container-max-width: 1200px;
+  --container-padding: var(--spacing-md);
+
+  // Grid Spacing
+  --grid-gap: var(--spacing-lg); /* Referencing spacing token */
+  --flex-gap: var(--spacing-md); /* Referencing spacing token */
+}

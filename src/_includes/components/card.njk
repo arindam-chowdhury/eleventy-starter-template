@@ -1,0 +1,16 @@
+{# src/_includes/components/card.njk #}
+<div class="card {{ 'card--disabled' if card.disabled }}">
+  {% if card.image %}
+  <img
+    src="{{ card.image.src }}"
+    alt="{{ card.image.alt }}"
+    class="card__image"
+  />
+  {% endif %} {% if card.title %}
+  <h3 class="card__title">{{ card.title }}</h3>
+  {% endif %} {% if card.text %}
+  <p class="card__text">{{ card.text }}</p>
+  {% endif %} {% if card.link %}
+  <a href="{{ card.link.href }}" class="card__link">{{ card.link.text }}</a>
+  {% endif %}
+</div>

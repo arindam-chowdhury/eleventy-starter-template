@@ -1,0 +1,75 @@
+/* src/stylesheets/base/_global.scss */
+
+body {
+  font-family: var(--font-family-primary); /* Using token */
+  font-size: var(--font-size-base); /* Using token */
+  line-height: var(--line-height-normal); /* Using token */
+  color: var(--color-neutral-dark); /* Using token */
+  background-color: var(--color-neutral-light); /* Using token */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-family-heading); /* Using token */
+  line-height: var(--line-height-heading); /* Using token */
+  color: var(--color-neutral-dark);
+  margin-bottom: var(--spacing-medium); /* Using token */
+}
+
+h1 {
+  font-size: var(--font-size-heading-1);
+}
+h2 {
+  font-size: var(--font-size-heading-2);
+}
+h3 {
+  font-size: var(--font-size-heading-3);
+}
+h4 {
+  font-size: var(--font-size-heading-4);
+}
+h5 {
+  font-size: var(--font-size-heading-5);
+}
+h6 {
+  font-size: var(--font-size-heading-6);
+}
+
+p {
+  margin-bottom: var(--spacing-medium); /* Using token */
+  line-height: var(--line-height-paragraph); /* Using token */
+}
+
+a {
+  color: var(--link-color); /* Using token */
+  text-decoration: var(--link-text-decoration); /* Using token */
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+
+  &:hover {
+    color: var(--link-hover-color); /* Using token */
+    text-decoration: var(--link-hover-text-decoration); /* Using token */
+  }
+  &:active {
+    color: var(--link-active-color); /* Using token */
+    text-decoration: var(--link-active-text-decoration); /* Using token */
+  }
+  &:visited {
+    color: var(--link-visited-color); /* Using token */
+  }
+}
+
+/* Keyframes for spinner animation */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

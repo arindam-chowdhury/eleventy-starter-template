@@ -1,0 +1,12 @@
+/* src/stylesheets/tokens/primitives/_z-index.scss */
+
+:root {
+  --z-index-base: 1; // Normal elements
+  --z-index-dropdown: 100; // Dropdowns, tooltips
+  --z-index-sticky: 200; // Sticky headers/footers
+  --z-index-fixed: 300; // Fixed headers/footers
+  --z-index-overlay: 400; // Overlays, backdrops
+  --z-index-modal: 500; // Modals
+  --z-index-top: 999; // Critical elements always on top
+  --z-index-loading: 1000; // Loaders
+}

@@ -1,0 +1,23 @@
+// src/stylesheets/main.scss
+
+// 1. Design Tokens
+@import "tokens/index"; 
+
+// 2. Base Styles
+@import "base/reset";
+@import "base/global";
+
+// 3. Layout Styles
+@import "layout/container"; // this is for base.njk
+@import "layout/navbar"; 
+@import "layout/footer"; 
+
+// 4. Component Styles
+@import "components/button";
+@import "components/card";
+@import "components/input";
+
+// 5. Page-Specific Styles
+@import "pages/home";    //  this is imported for index.njk's styles
+@import "pages/contact";
+@import "pages/about";

@@ -1,0 +1,107 @@
+/* src/stylesheets/layout/_navbar.scss */
+
+.main-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-xl) var(--spacing-3xl);
+  background-color: var(--color-background-light);
+  min-height: 80px;
+  border-bottom: var(--border-width-thin) solid #e0e0e0;
+  box-shadow: var(--shadow-light);
+
+  @media (max-width: var(--breakpoint-md)) {
+    flex-wrap: wrap;
+    padding: var(--spacing-lg) var(--spacing-xl);
+  }
+
+  @media (max-width: var(--breakpoint-sm)) {
+    padding: var(--spacing-base) var(--spacing-lg);
+  }
+}
+
+.navbar-logo {
+  flex-shrink: 0;
+  margin-right: var(--spacing-2xl);
+
+  .logo-image {
+    height: 40px;
+    width: auto;
+    border-radius: var(--border-radius-sm);
+  }
+
+  @media (max-width: var(--breakpoint-md)) {
+    margin-right: var(--spacing-xl);
+  }
+}
+
+.navbar-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: var(--spacing-2xl);
+  flex-grow: 1;
+
+  @media (max-width: var(--breakpoint-md)) {
+    order: 2;
+    flex-basis: 100%;
+    justify-content: center;
+    margin-top: var(--spacing-lg);
+    gap: var(--spacing-xl);
+  }
+
+  @media (max-width: var(--breakpoint-sm)) {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-base);
+  }
+}
+
+.navbar-item {
+  .navbar-link {
+    text-decoration: none;
+    color: var(--color-text-primary, #333333);
+    font-family: var(--font-family-primary, "Inter", sans-serif);
+    font-size: var(--font-size-base, 16px);
+    font-weight: var(--font-weight-medium, 500);
+    padding: var(--spacing-2xs) var(--spacing-sm);
+    border-radius: var(--border-radius-sm);
+    transition: color 0.2s ease, background-color 0.2s ease;
+    white-space: nowrap;
+
+    &:hover,
+    &:focus {
+      color: var(--gl-color-green);
+      outline: none;
+    }
+  }
+}
+
+.navbar-actions {
+  flex-shrink: 0;
+
+  @media (max-width: var(--breakpoint-md)) {
+    order: 1;
+  }
+}
+
+.btn-careers {
+  display: inline-block;
+  padding: var(--spacing-base) var(--spacing-lg);
+  border: var(--border-width-thin, 1px) solid var(--gl-color-black);
+  color: var(--gl-color-black);
+  text-decoration: none;
+  font-family: var(--font-family-primary, "Inter", sans-serif);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  
+  cursor: pointer;
+  user-select: none;
+
+  &:hover,
+  &:focus {
+    color: var(--gl-color-green);
+    outline: none;
+  }
+}

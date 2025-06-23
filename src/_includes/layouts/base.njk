@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="language" content="English" />
     <meta name="author" content="{{ site.author.name }}" />
-    <link type="text/plain" rel="author" href="./humans.txt" />
+    <link type="text/plain" rel="author" href="/humans.txt" /> {# Corrected path #}
     <meta
       name="description"
       content="{% if page.description %}{{ page.description }}{% else %}{{
@@ -14,7 +14,8 @@
       }}{% endif %}"
     />
     <meta name="copyright" content="{{ site.author.name }}" />
-    {% if site.isLive %}
+
+    {# Conditional SEO tags for live environment #} {% if site.isLive %}
     <meta name="revisit-after" content="1 day" />
     <meta
       name="keywords"
@@ -103,19 +104,20 @@
     <meta property="og:image" content="{{ site.logo }}" />
     {% if site.seo.bing_verification %}
     <meta name="msvalidate.01" content="{{ site.seo.bing_verification }}" />
-    {% endif %} {% endif %}
-    <meta name="HandheldFriendly" content="True" />
-    <meta name="MobileOptimized" content="320" />
+    {% endif %} {% endif %} {# Dynamic Title Tag #}
     <title>{{ site.title }} {{ title }}</title>
+    {# Link to your compiled main CSS file, which includes your design system #}
     <link rel="stylesheet" href={{
-      "stylesheets/style.css" | url | safe
-    }}>
-    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+      "stylesheets/main.css" | url | safe
+    }}> {# Favicon #}
+    <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon" /> {# Corrected path #}
+    {# External JavaScript Libraries #}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+    {# Google Analytics #}
     <script
       async
-      src="https://www.googletagmanager.com/gtag/js?id=<ANALYTICS_CODE>>"
+      src="https://www.googletagmanager.com/gtag/js?id={{ site.analytics.ga_id }}" {# Corrected placeholder #}
     ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -124,11 +126,23 @@
       }
       gtag("js", new Date());
 
-      gtag("config", "ANALYTICS_CODE");
+      gtag("config", "{{ site.analytics.ga_id }}"); 
     </script>
   </head>
 
   <body>
-    {{ content | safe }}
+    <header>
+      {# Include your navbar partial here #}
+      {% include "layouts/navbar.njk" %} 
+    </header>
+
+    <main> 
+      {{ content | safe }} {# The page-specific content goes here #}
+    </main>
+
+    <footer>
+      {# Your site-wide footer content #}
+      {% include "layouts/footer.njk" %}
+    </footer>
   </body>
 </html>
